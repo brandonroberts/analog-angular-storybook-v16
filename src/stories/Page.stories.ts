@@ -1,10 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { moduleMetadata } from '@storybook/angular/dist/client';
 import { within, userEvent } from '@storybook/testing-library';
-import { CommonModule } from '@angular/common';
 
-import Button from './button.component';
-import Header from './header.component';
 import Page from './page.component';
 
 const meta: Meta<Page> = {
@@ -14,12 +10,6 @@ const meta: Meta<Page> = {
     // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout
     layout: 'fullscreen',
   },
-  decorators: [
-    moduleMetadata({
-      declarations: [Button, Header],
-      imports: [CommonModule],
-    }),
-  ],
 };
 
 export default meta;
