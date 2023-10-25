@@ -12,7 +12,7 @@ export default defineConfig(({ mode }) => ({
   resolve: {
     mainFields: ['module'],
   },
-  plugins: [analog()],
+  plugins: [analog({ ssr: mode !== 'production' })],
   test: {
     globals: true,
     environment: 'jsdom',
