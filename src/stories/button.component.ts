@@ -1,3 +1,4 @@
+import { trigger, transition, style, animate } from '@angular/animations';
 import { CommonModule } from '@angular/common';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
@@ -5,7 +6,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   selector: 'storybook-button',
   standalone: true,
   imports: [CommonModule],
-  template: ` <button
+  template: ` <button @enterAnimation
     type="button"
     (click)="onClick.emit($event)"
     [ngClass]="classes"
@@ -14,6 +15,15 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
     {{ label }}
   </button>`,
   styleUrls: ['./button.css'],
+  animations: [
+    // Define animation
+    trigger('enterAnimation', [
+      transition(':enter', [
+        style({ background: 'transparent' }),
+        animate('500ms', style({ background: 'red' })),
+      ]),
+    ]),
+  ],  
 })
 export default class ButtonComponent {
   /**
