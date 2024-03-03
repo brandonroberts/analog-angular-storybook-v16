@@ -1,8 +1,4 @@
 import type { StorybookConfig } from "@storybook/angular";
-import { mergeConfig } from 'vite';
-import angular from '@analogjs/vite-plugin-angular';
-
-process.env.NODE_ENV = 'test';
 
 const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
